@@ -676,3 +676,6 @@ header nav a[aria-current="page"]::after{transform:scaleX(1)}
 .bot-steps p{margin-top:.6rem;font-size:.92rem;color:var(--ink-soft);line-height:1.6}
 .bot-fine{margin-top:3rem;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-soft);max-width:40rem}
 @media(min-width:768px){.bot-steps ol{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.bot-embed{width:100%;max-width:34rem;justify-self:center;min-height:36rem;border:1px solid var(--border);background:#fff;box-shadow:0 40px 70px -40px rgba(28,26,24,.45)}
+.bot-embed chat-widget{display:block;width:100%}
+@media(max-width:767px){.bot-embed{min-height:32rem}}

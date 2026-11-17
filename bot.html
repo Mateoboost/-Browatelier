@@ -81,21 +81,11 @@
           <a class="btn btn-dark" href="#" data-open-chat><svg><use href="#i-chat"/></svg>Empezar a conversar</a>
           <a class="wa-link" data-wa="cita" href="#"><svg><use href="#i-wa"/></svg>Prefiero WhatsApp</a>
         </div>
-        <p class="hero-note reveal" style="--i:4"><svg><use href="#i-clock"/></svg>El chat está en la esquina inferior derecha de la pantalla.</p>
+        <p class="hero-note reveal" style="--i:4"><svg><use href="#i-clock"/></svg>Escriba en el chat y Sofía le responde al momento.</p>
       </div>
 
-      <div class="bot-card reveal" style="--i:2" aria-hidden="true">
-        <div class="bot-card-head">
-          <span class="avatar">S</span>
-          <div><strong>Sofía</strong><span><i></i>Asesora de Brow Atelier</span></div>
-        </div>
-        <div class="bot-msgs">
-          <p class="in">Hola, me gustaría información de Naturale Brows.</p>
-          <p class="out">Hola, soy Sofía de Brow Atelier 🤍 Naturale Brows es nuestro nanoblading pelo a pelo, para una ceja más poblada y natural. La primera sesión cuesta ₡155.000 y dura unos 60 minutos.</p>
-          <p class="out">¿Te gustaría ver espacios disponibles?</p>
-          <p class="in">Sí, el jueves.</p>
-          <p class="typing"><span></span><span></span><span></span></p>
-        </div>
+      <div class="bot-embed" id="chat">
+        <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6afc43ec0fbf641fd10db937"></script>
       </div>
     </div>
   </section>
@@ -147,18 +137,19 @@
 
 <script src="app.js"></script>
 <script>
-  // Abre el chat de GoHighLevel desde los botones de la página
+  // Lleva al chat incrustado y pone el foco en el campo de mensaje
   document.addEventListener("click", function (e) {
     var t = e.target.closest("[data-open-chat]");
     if (!t) return;
     e.preventDefault();
-    var w = window.leadConnector && window.leadConnector.chatWidget;
-    if (w && typeof w.openWidget === "function") { w.openWidget(); return; }
-    var bubble = document.querySelector("chat-widget, #lc_text-widget, [class*='lc_text-widget']");
-    if (bubble && bubble.shadowRoot) { var b = bubble.shadowRoot.querySelector("button"); if (b) { b.click(); return; } }
-    if (bubble && typeof bubble.click === "function") bubble.click();
+    var box = document.getElementById("chat");
+    box.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(function () {
+      var cw = box.querySelector("chat-widget");
+      var input = cw && cw.shadowRoot && cw.shadowRoot.querySelector("textarea, input[type=text]");
+      if (input) input.focus({ preventScroll: true });
+    }, 700);
   });
 </script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6afc43ec0fbf641fd10db937"></script>
 </body>
 </html>
