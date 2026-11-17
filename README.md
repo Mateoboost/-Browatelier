@@ -6,6 +6,7 @@ Demo del sitio de Brow Atelier (Santa Ana, Costa Rica) con agenda en línea simu
 
 - `index.html`: home (servicios, resultados, testimonios, precios, resumen de la Academy, FAQ, contacto)
 - `academia.html`: página de venta del Método Naturale Brows con agenda de llamada informativa
+- `bot.html`: página del asistente virtual (Sofía) con el chat de GoHighLevel
 - `styles.css`: estilos compartidos
 - `app.js`: agenda simulada, WhatsApp, animaciones, menú, FAQ y galería
 
