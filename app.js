@@ -21,7 +21,7 @@ document.querySelectorAll("[data-wa]").forEach(a => {
    Cada servicio usa el calendario de su especialista.
    Cambia horarios, días y servicios aquí. */
 const BOOKING = {
-  demo: true,                 // muestra la etiqueta "Modo demo" y no envía nada
+  demo: false,                // true muestra la etiqueta "Modo demo"
   weeksAhead: 8,              // cuántas semanas se pueden reservar
   calendars: {
     nicole:  { label: "Agenda de Nicole", days: [2,3,4,5,6], start: "09:00", end: "17:00", step: 60, breaks: [["12:00","13:00"]], busy: .45 },
